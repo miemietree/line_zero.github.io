@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="en" data-default-color-scheme=&#34;auto&#34;>
 
 
 
@@ -20,7 +20,7 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-  <title>pintos 安装和适配 - Hexo</title>
+  <title>我的第一篇博客 - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -89,7 +89,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                首页
+                Home
               </a>
             </li>
           
@@ -101,7 +101,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                归档
+                Archives
               </a>
             </li>
           
@@ -113,7 +113,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                分类
+                Categories
               </a>
             </li>
           
@@ -125,7 +125,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
-                标签
+                Tags
               </a>
             </li>
           
@@ -137,7 +137,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                关于
+                About
               </a>
             </li>
           
@@ -165,7 +165,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="pintos 安装和适配">
+            <span class="h2" id="subtitle" title="我的第一篇博客">
               
             </span>
 
@@ -175,8 +175,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-03-15 19:33" pubdate>
-        2021年3月15日 晚上
+      <time datetime="2021-03-15 15:05" pubdate>
+        March 15, 2021 pm
       </time>
     </span>
   
@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      784 字
+      5 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      11
+      1
        分钟
     </span>
   
@@ -227,50 +227,10 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">pintos 安装和适配</h1>
+            <h1 style="display: none">我的第一篇博客</h1>
             
             <div class="markdown-body">
-              <hr>
-<p>一、安装ubuntu 18.04</p>
-<ol>
-<li>打开microsoft  store 商店获取Ubuntu 18.04，下载安装（温馨提示：使用热点比校园网快）</li>
-</ol>
-<p>二、WSL安装</p>
-<ol>
-<li>打开微软官方教程： <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/install-win10">https://docs.microsoft.com/zh-cn/windows/wsl/install-win10</a></li>
-</ol>
-<p>三、下载pintos包和bochs包</p>
-<ol>
-<li><p>bochs  官网下载: <a target="_blank" rel="noopener" href="http://bochs.sourceforge.net/">http://bochs.sourceforge.net/</a>       下载2.6.7版本</p>
-</li>
-<li><p>pintos：<a target="_blank" rel="noopener" href="https://pintos-os.org/cgi-bin/gitweb.cgi?p=pintos-anon;a=tree;h=refs/heads/master;hb=refs/heads/master">https://pintos-os.org/cgi-bin/gitweb.cgi?p=pintos-anon;a=tree;h=refs/heads/master;hb=refs/heads/master</a><br>点击snapshot 下载安装包</p>
-</li>
-</ol>
-<p>四、将包解压<br>#将包转移至ubuntu目录下，ubuntu目录就是输入cd之后的目录：~ 波浪号</p>
-<img src="/2021/03/15/pintos-%E5%AE%89%E8%A3%85%E5%92%8C%E9%80%82%E9%85%8D/pic1.png" srcset="/img/loading.gif" class="" title="图片1">
-
-<p>#转移指令 mv<br>mv 目标文件(路径) ~<br>#解压bochs<br>tar zxvf bochs-2.6.7.tar.gz<br>#解压pintos<br>tar zxvf pintos-anon-master-b9454eb.tar.gz<br>#文件夹改名<br>mv pintos-anon-master-b9454eb pintos<br>#解压后：</p>
-<img src="/2021/03/15/pintos-%E5%AE%89%E8%A3%85%E5%92%8C%E9%80%82%E9%85%8D/pic2.png" srcset="/img/loading.gif" class="" title="图片2">
-
-<p>五、apt更换阿里云源<br>cd /etc/apt<br>vim sources.list<br>#复制以下内容到sources.list文件，直接复制存在换行导致格式问题，需要稍作处理<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-security main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-security main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-updates main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-updates main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-proposed main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-proposed main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-backports main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-backports main restricted universe multiverse<br>#执行以下操作，正常结束即换源成功<br>sudo apt update<br>sudo apt upgrade</p>
-<p>六、ubuntu环境配置<br>sudo apt-get install build-essential<br>sudo apt-get install xorg-dev<br>sudo apt-get install bison<br>sudo apt-get install libgtk2.0-dev<br>sudo apt-get install libc6<br>sudo apt-get install libgcc1<br>sudo apt-get install libstdc++5<br>sudo apt-get install libstdc++6<br>sudo apt-get install libncurses5<br>sudo apt-get install libncurses5 -dev#失败则忽略<br>sudo apt-get install g++-multilib</p>
-<p>七、安装bochs和pintos</p>
-<p>#安装bochs<br>1.到目录下进行配置后make<br>cd bochs-2.6.7<br>sudo ./configure –enable-gdb-stub –with-x –with-x11 –with-term –with-nogui<br>make<br>sudo make install<br>#输入bochs 结果显示如下即是安装成功</p>
-<img src="/2021/03/15/pintos-%E5%AE%89%E8%A3%85%E5%92%8C%E9%80%82%E9%85%8D/pic3.png" srcset="/img/loading.gif" class="" title="图片3">
-
-<p>#安装pintos<br>1.编辑GDBMACROS变量，将你自己的Pintos完整路径赋给该变量<br>cd pintos/src/utils<br>sudo vim pintos-gdb<br>#完整路径也就是把pintos之前的路径改为<del>/  如下图(</del>为ubuntu目录</p>
-<img src="/2021/03/15/pintos-%E5%AE%89%E8%A3%85%E5%92%8C%E9%80%82%E9%85%8D/pic4.png" srcset="/img/loading.gif" class="" title="图片4">
-
-<p>2.打开pintos/src/utils 下的Makefile,将LOADLIBES变量名编辑为LDLIBS<br>cd pintos/src/utils<br>sudo vim Makefile<br>3.在/src/utils中输入make来编译utils<br>make<br>4.在points/src/threads并运行来编译线程目录make<br>cd points/src/threads<br>make<br>5.编辑/utils/pintos（〜257行）：替换kernel.bin为完整路径的kernel.bin<br>cd pintos/src/utils<br>sudo vim points<br>#路径更改：前半部分是 /home/你的用户名/pintos/，例如我用户名为king<br>#后半部分为kernel.bin的路径，这个文件在 pintos/src/threads/build 中，#可到对应位置查看进行确认<br>cd pintos/src/threads/build<br>ls</p>
-<img src="/2021/03/15/pintos-%E5%AE%89%E8%A3%85%E5%92%8C%E9%80%82%E9%85%8D/pic5.png" srcset="/img/loading.gif" class="" title="图片5">
-
-<p>6.编辑/utils/Pintos.pm（362行）：替换loader.bin为完整路径的loader.bin<br>#更改操作和和前一个操作一样，添加完整路径<br>cd pintos/src/utils<br>sudo vim Pintos.pm<br>…<br>#loader.bin 和kernel.bin位于同一个目录下，自行查看</p>
-<p>7.打开~/.bashrc并添加export PATH=/home/…/pintos/src/utils:$PATH到最后一行<br>vim ~/.bashrc<br>export PATH=/home/…/pintos/src/utils:$PATH<br>#…为用户名，与前面一样，如下图</p>
-<img src="/2021/03/15/pintos-%E5%AE%89%E8%A3%85%E5%92%8C%E9%80%82%E9%85%8D/pic6.png" srcset="/img/loading.gif" class="" title="图片6">
-
-<p>8.重新打开终端输入source ~/.bashrc并运行<br>cd pintos<br>source ~/.bashrc<br>pintos run alarm-multiple<br>#结果如下图大功告成</p>
-<img src="/2021/03/15/pintos-%E5%AE%89%E8%A3%85%E5%92%8C%E9%80%82%E9%85%8D/pic7.jpg" srcset="/img/loading.gif" class="" title="图片7">
-<hr>
+              <p>加油！考研人！</p>
 
             </div>
             <hr>
@@ -291,15 +251,15 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/post/5117bb8e.html">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">pintos 安装和适配</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2021/03/15/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
-                        <span class="hidden-mobile">我的第一篇博客</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
@@ -314,7 +274,7 @@
     
       <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
         <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -340,7 +300,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -349,7 +309,7 @@
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
           <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+                 for="local-search-input">keyword</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
