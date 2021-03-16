@@ -14,13 +14,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  
-    <meta name="description" content="">
-  
-  <meta name="author" content="John Doe">
+  <meta name="description" content="">
+  <meta name="author" content="Lai Enlin">
   <meta name="keywords" content="">
   
-  <title>M1 Macbook Air上手折腾记录 - Hexo</title>
+  <title>M1 Macbook Air上手折腾记录 - BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -55,14 +53,10 @@
 
 <!-- 自定义样式保持在最底部 -->
 
-  
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-
-
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -238,7 +232,7 @@
 <p>上手第一眼就是屏幕比原来好多了。此外感知最明显的就是性能和续航，性能确实很强，编译运行都很快，没抢到幻13，不能和zen3做个对比，续航也挺长的，以前开IDE必接电源，现在几天才充一次电。</p>
 <h3 id="编程环境配置"><a href="#编程环境配置" class="headerlink" title="编程环境配置"></a>编程环境配置</h3><h4 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h4><p>系统自带Python2和Python3.8。</p>
 <h5 id="Miniforge3"><a href="#Miniforge3" class="headerlink" title="Miniforge3"></a>Miniforge3</h5><p>我选择使用Miniforge3安装，网址如下<code>https://github.com/conda-forge/miniforge/</code>，选择arm64（Apple Silicon）即可，下载后<code>sh Miniforge3-MacOSX-arm64.sh</code>一路回车就装好了。</p>
-<img src="/post/5aff1b88/pic1.png" srcset="/img/loading.gif" class="" title="图片1">
+<img src="/post/5aff1b88/pic1.png" srcset="/img/loading.gif" lazyload class="" title="图片1">
 
 <p>基本上大部分都包都可以通过conda install和pip3 install解决，装好numpy, scipy, pandas, matplotlib等正常运行。</p>
 <h5 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h5><p>因为实验室里都用Pytorch，也就没装TensorfLow。</p>
@@ -362,11 +356,9 @@
   <div class="music-player">
     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1811921555&auto=1&height=66"></iframe>
   </div>
-  
   <div class="footer-content">
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
-  
   
 
   
@@ -374,8 +366,9 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
@@ -398,7 +391,7 @@
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -465,15 +458,9 @@
 
 
 
-  
-<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script>
-
-
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>

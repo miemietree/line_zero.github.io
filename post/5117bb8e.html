@@ -14,13 +14,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  
-    <meta name="description" content="">
-  
-  <meta name="author" content="John Doe">
+  <meta name="description" content="">
+  <meta name="author" content="Lai Enlin">
   <meta name="keywords" content="">
   
-  <title>pintos 安装和适配 - Hexo</title>
+  <title>pintos 安装和适配 - BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -55,14 +53,10 @@
 
 <!-- 自定义样式保持在最底部 -->
 
-  
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
-
-
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -250,29 +244,29 @@
 </li>
 </ol>
 <p>四、将包解压<br>#将包转移至ubuntu目录下，ubuntu目录就是输入cd之后的目录：~ 波浪号</p>
-<img src="/post/5117bb8e/pic1.png" srcset="/img/loading.gif" class="" title="图片1">
+<img src="/post/5117bb8e/pic1.png" srcset="/img/loading.gif" lazyload class="" title="图片1">
 
 <p>#转移指令 mv<br>mv 目标文件(路径) ~<br>#解压bochs<br>tar zxvf bochs-2.6.7.tar.gz<br>#解压pintos<br>tar zxvf pintos-anon-master-b9454eb.tar.gz<br>#文件夹改名<br>mv pintos-anon-master-b9454eb pintos<br>#解压后：</p>
-<img src="/post/5117bb8e/pic2.png" srcset="/img/loading.gif" class="" title="图片2">
+<img src="/post/5117bb8e/pic2.png" srcset="/img/loading.gif" lazyload class="" title="图片2">
 
 <p>五、apt更换阿里云源<br>cd /etc/apt<br>vim sources.list<br>#复制以下内容到sources.list文件，直接复制存在换行导致格式问题，需要稍作处理<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-security main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-security main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-updates main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-updates main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-proposed main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-proposed main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-backports main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-backports main restricted universe multiverse<br>#执行以下操作，正常结束即换源成功<br>sudo apt update<br>sudo apt upgrade</p>
 <p>六、ubuntu环境配置<br>sudo apt-get install build-essential<br>sudo apt-get install xorg-dev<br>sudo apt-get install bison<br>sudo apt-get install libgtk2.0-dev<br>sudo apt-get install libc6<br>sudo apt-get install libgcc1<br>sudo apt-get install libstdc++5<br>sudo apt-get install libstdc++6<br>sudo apt-get install libncurses5<br>sudo apt-get install libncurses5 -dev#失败则忽略<br>sudo apt-get install g++-multilib</p>
 <p>七、安装bochs和pintos</p>
 <p>#安装bochs<br>1.到目录下进行配置后make<br>cd bochs-2.6.7<br>sudo ./configure –enable-gdb-stub –with-x –with-x11 –with-term –with-nogui<br>make<br>sudo make install<br>#输入bochs 结果显示如下即是安装成功</p>
-<img src="/post/5117bb8e/pic3.png" srcset="/img/loading.gif" class="" title="图片3">
+<img src="/post/5117bb8e/pic3.png" srcset="/img/loading.gif" lazyload class="" title="图片3">
 
 <p>#安装pintos<br>1.编辑GDBMACROS变量，将你自己的Pintos完整路径赋给该变量<br>cd pintos/src/utils<br>sudo vim pintos-gdb<br>#完整路径也就是把pintos之前的路径改为<del>/  如下图(</del>为ubuntu目录</p>
-<img src="/post/5117bb8e/pic4.png" srcset="/img/loading.gif" class="" title="图片4">
+<img src="/post/5117bb8e/pic4.png" srcset="/img/loading.gif" lazyload class="" title="图片4">
 
 <p>2.打开pintos/src/utils 下的Makefile,将LOADLIBES变量名编辑为LDLIBS<br>cd pintos/src/utils<br>sudo vim Makefile<br>3.在/src/utils中输入make来编译utils<br>make<br>4.在points/src/threads并运行来编译线程目录make<br>cd points/src/threads<br>make<br>5.编辑/utils/pintos（〜257行）：替换kernel.bin为完整路径的kernel.bin<br>cd pintos/src/utils<br>sudo vim points<br>#路径更改：前半部分是 /home/你的用户名/pintos/，例如我用户名为king<br>#后半部分为kernel.bin的路径，这个文件在 pintos/src/threads/build 中，#可到对应位置查看进行确认<br>cd pintos/src/threads/build<br>ls</p>
-<img src="/post/5117bb8e/pic5.png" srcset="/img/loading.gif" class="" title="图片5">
+<img src="/post/5117bb8e/pic5.png" srcset="/img/loading.gif" lazyload class="" title="图片5">
 
 <p>6.编辑/utils/Pintos.pm（362行）：替换loader.bin为完整路径的loader.bin<br>#更改操作和和前一个操作一样，添加完整路径<br>cd pintos/src/utils<br>sudo vim Pintos.pm<br>…<br>#loader.bin 和kernel.bin位于同一个目录下，自行查看</p>
 <p>7.打开~/.bashrc并添加export PATH=/home/…/pintos/src/utils:$PATH到最后一行<br>vim ~/.bashrc<br>export PATH=/home/…/pintos/src/utils:$PATH<br>#…为用户名，与前面一样，如下图</p>
-<img src="/post/5117bb8e/pic6.png" srcset="/img/loading.gif" class="" title="图片6">
+<img src="/post/5117bb8e/pic6.png" srcset="/img/loading.gif" lazyload class="" title="图片6">
 
 <p>8.重新打开终端输入source ~/.bashrc并运行<br>cd pintos<br>source ~/.bashrc<br>pintos run alarm-multiple<br>#结果如下图大功告成</p>
-<img src="/post/5117bb8e/pic7.jpg" srcset="/img/loading.gif" class="" title="图片7">
+<img src="/post/5117bb8e/pic7.jpg" srcset="/img/loading.gif" lazyload class="" title="图片7">
 
             </div>
             <hr>
@@ -373,11 +367,9 @@
   <div class="music-player">
     <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1811921555&auto=1&height=66"></iframe>
   </div>
-  
   <div class="footer-content">
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
-  
   
 
   
@@ -385,8 +377,9 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
@@ -409,7 +402,7 @@
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -476,15 +469,9 @@
 
 
 
-  
-<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
-<script src="//cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script>
-
-
 
 <!-- 主题的启动项 保持在最底部 -->
 <script  src="/js/boot.js" ></script>
-
 
 
 </body>
