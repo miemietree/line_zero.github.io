@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      1.1k 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      13
        分钟
     </span>
   
@@ -230,7 +230,41 @@
             <h1 style="display: none">M1 Macbook AIr上手折腾记录</h1>
             
             <div class="markdown-body">
-              
+              <h2 id="M1-Macbook-AIr上手折腾记录"><a href="#M1-Macbook-AIr上手折腾记录" class="headerlink" title="M1 Macbook AIr上手折腾记录"></a>M1 Macbook AIr上手折腾记录</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>一名计科大三学生。之前使用的是18年入学买的ASUS笔记本（i5-8250U+8G RAM+MX150），以下对比均以此为参考。M1电脑发布后，各路评测都把这款电脑吹的神乎其神，正巧发了奖学金便入手了16+512版本。</p>
+<p>上手第一眼就是屏幕比原来好多了。此外感知最明显的就是性能和续航，性能确实很强，编译运行都很快，没抢到幻13，不能和zen3做个对比，续航也挺长的，以前开IDE必接电源，现在几天才充一次电。</p>
+<h3 id="编程环境配置"><a href="#编程环境配置" class="headerlink" title="编程环境配置"></a>编程环境配置</h3><h4 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h4><p>系统自带Python2和Python3.8。</p>
+<h5 id="Miniforge3"><a href="#Miniforge3" class="headerlink" title="Miniforge3"></a>Miniforge3</h5><p>我选择使用Miniforge3安装，网址如下<code>https://github.com/conda-forge/miniforge/</code>，选择arm64（Apple Silicon）即可，下载后<code>sh Miniforge3-MacOSX-arm64.sh</code>一路回车就装好了。</p>
+<img src="/post/5aff1b88/pic1.png" srcset="/img/loading.gif" class="" title="图片1">
+
+<p>基本上大部分都包都可以通过conda install和pip3 install解决，装好numpy, scipy, pandas, matplotlib等正常运行。</p>
+<h5 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h5><p>因为实验室里都用Pytorch，也就没装TensorfLow。</p>
+<p>Pytorch还没有适配M1，主要参考这个issue: <code>https://github.com/pytorch/pytorch/issues/48145#issuecomment-747631341</code>，最好是自己从源代码编译，我大概是编译了十几分钟，电脑第一次也是唯一一次很烫。</p>
+<p>简单说一下从源代码编译过程：</p>
+<ol>
+<li><p>安装相关依赖：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">conda install setuptools cffi typing_extensions future six requests dataclasses pkg-config libuv<br></code></pre></td></tr></table></figure>
+
+<p>也有可能需要装cmake</p>
+</li>
+<li><p>下载源码：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git clone --recursive https://github.com/pytorch/pytorch<br>cd pytorch<br></code></pre></td></tr></table></figure></li>
+<li><p>编译安装</p>
+<p>先修改CMakeLists.txt<br><code>option(USE_OPENMP &quot;Use OpenMP for parallel code&quot; ON)</code>改为<code>option(USE_OPENMP &quot;Use OpenMP for parallel code&quot; OFF)</code></p>
+<p>编译并安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">export CMAKE_PREFIX_PATH=$&#123;CONDA_PREFIX:-&quot;$(dirname $(which conda))/../&quot;&#125;<br>MACOSX_DEPLOYMENT_TARGET=11.1 CC=clang CXX=clang++ python setup.py install<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="C-C"><a href="#C-C" class="headerlink" title="C/C++"></a>C/C++</h4><p>系统自带Clang，性能也很不错，编译运行之前课程中的C/C++代码相当迅速，但是有一个问题，Clang似乎过于严格，课程中的代码完全是在windows上编写测试的，大部分使用MinGW（GCC），少数使用的WSL中的GCC，基本没有error，在M1上就会报error，不能运行，有点烦😂。</p>
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><p>我用的是Zulu JDK 15，即Azul编译的OpenJDK，下载地址如下<code>https://www.azul.com/downloads/zulu-community/?package=jdk</code>，选macOS arm64，下载安装即可完成配置。</p>
+<p>这里我仅仅测试了Java程序设计中用到的代码是否可行，结果是均可正常运行，包括多线程、图形界面、网络编程、数据流等均可正常运行。</p>
+<h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><p>我选择尝试一下PostgreSQL，由图灵奖的获得者Michael Ralph Stonebraker最初主持设计开发。直接下载了官网提供的Postgres.app，拖到应用程序里就行了，也可以添加的PATH里便于从终端启动<code>echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp</code>，适配M1芯片的版本也在开发中。可以通过Homebrew安装原生的PostgreSQL。卸载方式<code>https://my.oschina.net/wukongcelebrity/blog/304857</code></p>
+<p>用DataGrip连接数据库，测试了一下数据库实验的代码，排除PostgreSQL和MSSQL的差异，都可以正常执行操作且没有问题。</p>
+<h5 id="Qt连接PostgreSQL"><a href="#Qt连接PostgreSQL" class="headerlink" title="Qt连接PostgreSQL"></a>Qt连接PostgreSQL</h5><p>主要参考<code>https://blog.csdn.net/lm409/article/details/76793708</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">otool -L libqsqlpsql.dylib<br>install_name_tool -change /Applications/Postgres.app/Contents/Versions/9.6/lib/libpq.5.dylib /Applications/Postgres.app/Contents/Versions/latest/lib/libpq.5.dylib libqsqlpsql.dylib<br></code></pre></td></tr></table></figure>
+
+<h4 id="EDA设计"><a href="#EDA设计" class="headerlink" title="EDA设计"></a>EDA设计</h4><p>计算机组成原理和计算体系结构的课程设计均为设计特定要求的CPU，前者是设计一个简单的MIPS风格的CPU，并在此基础上编写一个功能简单的小程序通过Basys3使用，后者则是设计一个具有流水线功能的MIPS风格的CPU，学院提供的是Basys3和Vivado的相关资料，因此不得不使用Vivado了。</p>
+<p>Vivado只有x86的Windows和Linux版本，只能通过虚拟机Windows on arm来运行了，性能损失还是很严重的。Vivado不同版本的运行效果差异巨大，最新版Vivado 2020.2无法Simulation，会无响应，其他均可，而我突发奇想装了Vivado 2018.1可以完美运行，从Simulation、Synthesis到Generate Bit Stream均正常。只能希望微软提升下arm windows的效率，或者Xilinx开发arm版的Vivado吧。</p>
+<p>对计组的课设Synthesis和Implementation以及Generate Bit Stream，i5的电脑大约十分钟左右，而M1虚拟机要十五分钟不到，有点慢了。</p>
+
             </div>
             <hr>
             <div>
