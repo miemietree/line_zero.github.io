@@ -18,7 +18,7 @@
   <meta name="author" content="Lai Enlin">
   <meta name="keywords" content="">
   
-  <title>pintos 安装和适配 - BLOG</title>
+  <title>BLOG</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="pintos 安装和适配">
+            <span class="h2" id="subtitle" title="">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-03-15 19:33" pubdate>
-        March 15, 2021 pm
+      <time datetime="2021-05-19 13:32" pubdate>
+        May 19, 2021 pm
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      784 字
+      732 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      11
+      8
        分钟
     </span>
   
@@ -225,48 +225,126 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">pintos 安装和适配</h1>
+            <h1 style="display: none"></h1>
             
             <div class="markdown-body">
-              <p>一、安装ubuntu 18.04</p>
-<ol>
-<li>打开microsoft  store 商店获取Ubuntu 18.04，下载安装（温馨提示：使用热点比校园网快）</li>
-</ol>
-<p>二、WSL安装</p>
-<ol>
-<li>打开微软官方教程： <a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/install-win10">https://docs.microsoft.com/zh-cn/windows/wsl/install-win10</a></li>
-</ol>
-<p>三、下载pintos包和bochs包</p>
-<ol>
-<li><p>bochs  官网下载: <a target="_blank" rel="noopener" href="http://bochs.sourceforge.net/">http://bochs.sourceforge.net/</a>       下载2.6.7版本</p>
+              <h1 id="华为云动态博客搭建"><a href="#华为云动态博客搭建" class="headerlink" title="华为云动态博客搭建"></a>华为云动态博客搭建</h1><h2 id="1-新建项目"><a href="#1-新建项目" class="headerlink" title="1.新建项目"></a>1.新建项目</h2><ul>
+<li>建立项目</li>
+</ul>
+<p>（1）点击新建项目</p>
+<p>（2）空白项目-&gt;Scrum</p>
+<p>（3）命名，确认</p>
+<ul>
+<li>新建仓库</li>
+</ul>
+<p>（1）点击代码托管，点击普通新建</p>
+<p>出现仓库名即可</p>
+<img src="/post/undefined/p1.png" srcset="/img/loading.gif" lazyload class="" title="图片1">
+
+<h2 id="2-代码托管"><a href="#2-代码托管" class="headerlink" title="2.代码托管"></a>2.代码托管</h2><p>打开本地shell </p>
+<p>（1）ssh 连接本地项目文件</p>
+<p>详细步骤见连接：</p>
+<p> <a target="_blank" rel="noopener" href="https://support.huaweicloud.com/usermanual-codehub/codehub_ug_8002.html">https://support.huaweicloud.com/usermanual-codehub/codehub_ug_8002.html</a></p>
+<p>​        生成密钥</p>
+<ul>
+<li><p>```shell<br>ssh-keygen -t rsa -C “你的QQ邮箱”</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs autohotkey"><br>  复制密钥<br><br>- ```shell<br>  clip &lt; ~/.ssh/id_rsa.pub<br></code></pre></td></tr></table></figure>
+
+<p>如果运行不了clip指令，则直接打开相应文件(例如使用code打开)，打开后复制</p>
 </li>
-<li><p>pintos：<a target="_blank" rel="noopener" href="https://pintos-os.org/cgi-bin/gitweb.cgi?p=pintos-anon;a=tree;h=refs/heads/master;hb=refs/heads/master">https://pintos-os.org/cgi-bin/gitweb.cgi?p=pintos-anon;a=tree;h=refs/heads/master;hb=refs/heads/master</a><br>点击snapshot 下载安装包</p>
+<li><p>打开华为云控制台项目，打开代码托管，点击设置我的SSH密码</p>
+<img src="/post/undefined/p2.png" srcset="/img/loading.gif" lazyload class="" title="图片1"></li>
+<li><p>点击右上角添加SSH密钥</p>
+<img src="/post/undefined/p3.png" srcset="/img/loading.gif" lazyload class="" title="图片1"></li>
+<li><p>输入密钥，点击确认</p>
+<img src="/post/undefined/p4.png" srcset="/img/loading.gif" lazyload class="" title="图片1"></li>
+</ul>
+<p>（2）在本地文件夹中克隆华为云blog项目</p>
+<ul>
+<li><p>打开华为云blog项目代码托管，点击仓库名称，见下图，复制框内内容</p>
+<img src="/post/undefined/p5.png" srcset="/img/loading.gif" lazyload class="" title="图片1"></li>
+<li><p>打开命令行，输入以下命令</p>
 </li>
-</ol>
-<p>四、将包解压<br>#将包转移至ubuntu目录下，ubuntu目录就是输入cd之后的目录：~ 波浪号</p>
-<img src="/post/5117bb8e/pic1.png" srcset="/img/loading.gif" lazyload class="" title="图片1">
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git clone 上面复制的内容<br></code></pre></td></tr></table></figure>
 
-<p>#转移指令 mv<br>mv 目标文件(路径) ~<br>#解压bochs<br>tar zxvf bochs-2.6.7.tar.gz<br>#解压pintos<br>tar zxvf pintos-anon-master-b9454eb.tar.gz<br>#文件夹改名<br>mv pintos-anon-master-b9454eb pintos<br>#解压后：</p>
-<img src="/post/5117bb8e/pic2.png" srcset="/img/loading.gif" lazyload class="" title="图片2">
+<p>本地将生成一个项目对应的文件夹，和你的项目名称相同</p>
+<p>【以项目temp为例，下图为克隆后生成的文件夹】</p>
+<img src="/post/undefined/p6.png" srcset="/img/loading.gif" lazyload class="" title="图片1">
 
-<p>五、apt更换阿里云源<br>cd /etc/apt<br>vim sources.list<br>#复制以下内容到sources.list文件，直接复制存在换行导致格式问题，需要稍作处理<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-security main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-security main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-updates main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-updates main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-proposed main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-proposed main restricted universe multiverse<br>deb <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-backports main restricted universe multiverse<br>deb-src <a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/ubuntu/">http://mirrors.aliyun.com/ubuntu/</a> bionic-backports main restricted universe multiverse<br>#执行以下操作，正常结束即换源成功<br>sudo apt update<br>sudo apt upgrade</p>
-<p>六、ubuntu环境配置<br>sudo apt-get install build-essential<br>sudo apt-get install xorg-dev<br>sudo apt-get install bison<br>sudo apt-get install libgtk2.0-dev<br>sudo apt-get install libc6<br>sudo apt-get install libgcc1<br>sudo apt-get install libstdc++5<br>sudo apt-get install libstdc++6<br>sudo apt-get install libncurses5<br>sudo apt-get install libncurses5 -dev#失败则忽略<br>sudo apt-get install g++-multilib</p>
-<p>七、安装bochs和pintos</p>
-<p>#安装bochs<br>1.到目录下进行配置后make<br>cd bochs-2.6.7<br>sudo ./configure –enable-gdb-stub –with-x –with-x11 –with-term –with-nogui<br>make<br>sudo make install<br>#输入bochs 结果显示如下即是安装成功</p>
-<img src="/post/5117bb8e/pic3.png" srcset="/img/loading.gif" lazyload class="" title="图片3">
+<p>文件夹下将生成一个.git文件</p>
+<img src="/post/undefined/p7.png" srcset="/img/loading.gif" lazyload class="" title="图片1">
 
-<p>#安装pintos<br>1.编辑GDBMACROS变量，将你自己的Pintos完整路径赋给该变量<br>cd pintos/src/utils<br>sudo vim pintos-gdb<br>#完整路径也就是把pintos之前的路径改为<del>/  如下图(</del>为ubuntu目录</p>
-<img src="/post/5117bb8e/pic4.png" srcset="/img/loading.gif" lazyload class="" title="图片4">
+<ul>
+<li><p>打开blog项目文件(预先下载的那个)</p>
+<p>将你打开的文件夹中，.git文件之外的所有文件复制到前面生成的文件夹中</p>
+</li>
+</ul>
+<p>（3）提交仓库</p>
+<p>提交命令如下，定位到本地，执行git的三条指令，即可完成推送</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd 本地项目文件地址（例如前文的temp)<br>//查看状态，包含修改与更新的内容<br>git status <br>//提交到仓库<br>git add .  //注意空格<br>//再次输入 git status 查看结果，全都变成绿色状态<br>//&quot; &quot;内自定义输入信息。例如&quot;first commit&quot;<br>git commit -m &quot;...&quot;<br>git push origin master<br></code></pre></td></tr></table></figure>
 
-<p>2.打开pintos/src/utils 下的Makefile,将LOADLIBES变量名编辑为LDLIBS<br>cd pintos/src/utils<br>sudo vim Makefile<br>3.在/src/utils中输入make来编译utils<br>make<br>4.在points/src/threads并运行来编译线程目录make<br>cd points/src/threads<br>make<br>5.编辑/utils/pintos（〜257行）：替换kernel.bin为完整路径的kernel.bin<br>cd pintos/src/utils<br>sudo vim points<br>#路径更改：前半部分是 /home/你的用户名/pintos/，例如我用户名为king<br>#后半部分为kernel.bin的路径，这个文件在 pintos/src/threads/build 中，#可到对应位置查看进行确认<br>cd pintos/src/threads/build<br>ls</p>
-<img src="/post/5117bb8e/pic5.png" srcset="/img/loading.gif" lazyload class="" title="图片5">
+<h2 id="3-编译构建"><a href="#3-编译构建" class="headerlink" title="3.编译构建"></a>3.编译构建</h2><p>（1）新建任务</p>
+<p>点击右上角”新建任务“</p>
+<img src="/post/undefined/p8.png" srcset="/img/loading.gif" lazyload class="" title="图片1">
 
-<p>6.编辑/utils/Pintos.pm（362行）：替换loader.bin为完整路径的loader.bin<br>#更改操作和和前一个操作一样，添加完整路径<br>cd pintos/src/utils<br>sudo vim Pintos.pm<br>…<br>#loader.bin 和kernel.bin位于同一个目录下，自行查看</p>
-<p>7.打开~/.bashrc并添加export PATH=/home/…/pintos/src/utils:$PATH到最后一行<br>vim ~/.bashrc<br>export PATH=/home/…/pintos/src/utils:$PATH<br>#…为用户名，与前面一样，如下图</p>
-<img src="/post/5117bb8e/pic6.png" srcset="/img/loading.gif" lazyload class="" title="图片6">
+<p>（2）点击下一步，在构建步骤中修改构建包路径</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">./target/blog-0.0.1-SNAPSHOT.jar<br></code></pre></td></tr></table></figure>
 
-<p>8.重新打开终端输入source ~/.bashrc并运行<br>cd pintos<br>source ~/.bashrc<br>pintos run alarm-multiple<br>#结果如下图大功告成</p>
-<img src="/post/5117bb8e/pic7.jpg" srcset="/img/loading.gif" lazyload class="" title="图片7">
+<img src="/post/undefined/p9.png" srcset="/img/loading.gif" lazyload class="" title="图片1">
+
+
+
+<h2 id="4-部署"><a href="#4-部署" class="headerlink" title="4.部署"></a>4.部署</h2><p>（1）点击部署，新建任务，自定义名称</p>
+<p>（2）勾选SpringBoot部署</p>
+<img src="/post/undefined/p10.png" srcset="/img/loading.gif" lazyload class="" title="图片1">
+
+<p>下面进入部署步骤</p>
+<p>（3）停止SpringBoot 服务</p>
+<p>选择主机组，将服务对应的绝对路径改为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash">&#123;spring_path&#125;/blog-0.0.1-SNAPSHOT.jar</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="file:///C:\Users\king\AppData\Roaming\Tencent\Users\1447284702\QQ\WinTemp\RichOle\3I}1@$L3QC6ZLI%MMPF99$N.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>（4）安装jdk：选择1.8.0版本</p>
+<p>（5）选择部署来源</p>
+<p>​    修改部署目录</p>
+<img src="/post/undefined/p11.png" srcset="/img/loading.gif" lazyload class="" title="图片1">
+
+<p>（6）启动SpringBoot 服务</p>
+<p>修改同停止SpringBoot服务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">$</span><span class="bash">&#123;spring_path&#125;/blog-0.0.1-SNAPSHOT.jar</span><br></code></pre></td></tr></table></figure>
+
+<img src="/post/undefined/p12.png" srcset="/img/loading.gif" lazyload class="" title="图片1">
+
+<p>（7）参数设置</p>
+<img src="/post/undefined/p13.png" srcset="/img/loading.gif" lazyload class="" title="图片1">
+
+<ul>
+<li><p>主机组设置</p>
+<p>返回首页点击通用设置</p>
+<p>点击主机安全组</p>
+<img src="/post/undefined/p14.png" srcset="/img/loading.gif" lazyload class="" title="图片1">
+
+<p>密码：Hitwh18041</p>
+</li>
+<li><p>spring_path:   自定义    /root/…/blog   (…部分可以写成自己的名字拼音，方便)</p>
+</li>
+<li><p>port 端口号，可用80，8080，8090等</p>
+</li>
+<li><p>其他不用填</p>
+</li>
+</ul>
+<p>（8）保存并执行</p>
+<p>（9）建立流水线，完成修改后自动部署</p>
+<ul>
+<li>新建流水线，按下图添加</li>
+</ul>
+<img src="/post/undefined/p15.png" srcset="/img/loading.gif" lazyload class="" title="图片1">
+
+<ul>
+<li><p>触发事件添加</p>
+<img src="/post/undefined/p16.png" srcset="/img/loading.gif" lazyload class="" title="图片1"></li>
+</ul>
 
             </div>
             <hr>
@@ -287,18 +365,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/post/5aff1b88.html">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">M1 Macbook Air上手折腾记录</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/post/d95d7e09.html">
-                        <span class="hidden-mobile">我的第一篇博客</span>
+                      <a href="/post/5aff1b88.html">
+                        <span class="hidden-mobile">M1 Macbook Air上手折腾记录</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
